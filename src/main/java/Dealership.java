@@ -1,17 +1,33 @@
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
-import java.util.Locale;
+
 
 public class Dealership {
-    String name;
-    String address;
-    String phone;
-    ArrayList<Vehicle> inventory;
+    private String name;
+    private String address;
+    private String phone;
+    private ArrayList<Vehicle> inventory;
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public ArrayList<Vehicle> getInventory() {
+        return inventory;
     }
 
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max){
@@ -36,12 +52,59 @@ public class Dealership {
         return inventoryWithinMakeModel;
     }
 
-    public void addVehicle(Vehicle vehicle){
-        inventory.add(vehicle);
+    public ArrayList<Vehicle> getVehiclesByYear(int min, int max){
+        ArrayList<Vehicle> inventoryWithinRange = new ArrayList<>();
+        for(Vehicle vehicle: inventory){
+            if(vehicle.getYear() >= min && vehicle.getYear() <= max){
+                inventoryWithinRange.add(vehicle);
+            }
+        }
+        return inventoryWithinRange;
+    }
+
+    public ArrayList<Vehicle> getVehiclesByColor(String color){
+        ArrayList<Vehicle> inventoryWithinColor = new ArrayList<>();
+        String makeParsed = color.trim();
+        for(Vehicle vehicle: inventory){
+            if(vehicle.getColor().equalsIgnoreCase(color)){
+                inventoryWithinColor.add(vehicle);
+            }
+        }
+        return inventoryWithinColor;
+    }
+
+    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max){
+        ArrayList<Vehicle> inventoryWithinRange = new ArrayList<>();
+        for(Vehicle vehicle: inventory){
+            if(vehicle.getOdometer() >= min && vehicle.getOdometer() <= max){
+                inventoryWithinRange.add(vehicle);
+            }
+        }
+        return inventoryWithinRange;
+    }
+
+    public ArrayList<Vehicle> getVehiclesByType(String type){
+        ArrayList<Vehicle> inventoryWithinType = new ArrayList<>();
+        String makeParsed = type.trim();
+        for(Vehicle vehicle: inventory){
+            if(vehicle.getColor().equalsIgnoreCase(type)){
+                inventoryWithinType.add(vehicle);
+            }
+        }
+        return inventoryWithinType;
     }
 
     public ArrayList<Vehicle> getAllVehicles(){
         return inventory;
     }
-    
+
+    public void addVehicle(Vehicle vehicle){
+        inventory.add(vehicle);
+    }
+
+    public void removeVehicle(Vehicle vehicle){
+        inventory.remove(vehicle);
+    }
+
+
 }
