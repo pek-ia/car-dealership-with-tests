@@ -10,6 +10,7 @@ public class Vehicle {
 
 
 
+
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
@@ -19,6 +20,7 @@ public class Vehicle {
         this.color = color;
         this.odometer = odometer;
         this.price = price;
+
     }
 
     public int getVin() {
