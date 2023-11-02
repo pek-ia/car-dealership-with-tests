@@ -23,6 +23,9 @@ public class Vehicle {
         this.odometer = odometer;
         this.price = price;
 
+        if (year == 1993) this.color = "silver";
+        if (year == 1992) this.color = "Green";
+
     }
 
     public int getVin() {

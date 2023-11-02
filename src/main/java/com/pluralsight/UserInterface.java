@@ -8,11 +8,11 @@ public class UserInterface {
 
     public UserInterface(){};
 
-    private init(){};
+    private void init(){};
 
     public void display(){
 
-        dealership =
+
     };
 
 
