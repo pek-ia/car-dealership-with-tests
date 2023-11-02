@@ -1,3 +1,7 @@
+package com.pluralsight;
+
+import com.pluralsight.Dealership;
+
 import java.io.*;
 
 public class DealershipFileManager {
@@ -26,7 +30,7 @@ public class DealershipFileManager {
                     int odometer = Integer.parseInt(vehicleData[6]);
                     double price = Double.parseDouble(vehicleData[7]);
 
-                    // Creates a Vehicle object and stores it
+                    // Creates a com.pluralsight.Vehicle object and stores it
                     Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                     newDealership.addVehicle(vehicle);
 

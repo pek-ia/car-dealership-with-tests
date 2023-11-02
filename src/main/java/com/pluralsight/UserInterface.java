@@ -1,3 +1,7 @@
+package com.pluralsight;
+
+import com.pluralsight.Dealership;
+
 public class UserInterface {
     Dealership dealership;
 
