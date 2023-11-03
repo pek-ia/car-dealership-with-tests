@@ -11,6 +11,9 @@ public class Vehicle {
     private double price;
 
 
+    public Vehicle(){
+
+    }
 
 
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {

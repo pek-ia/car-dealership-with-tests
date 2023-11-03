@@ -5,17 +5,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class VehicleTest {
+
     @Test
-    public void constructorTest() {
-        System.out.println("We are testing here!");
-        Vehicle v = new Vehicle(1, 1993, "Honda", "Accord", "sedan", "purple", 270000, 85.00);
+    public void constructorTest_defaultCTOR() {
+
+        Vehicle v = new Vehicle();
 
     }
 
 
     @Test
-    public void constructorTest_allValues() {
-        System.out.println("We are testing here!");
+    public void constructorTest_allValuesCTOR() {
+
         Vehicle v = new Vehicle(1, 1993, "Honda", "Accord", "sedan", "purple", 270000, 85.00);
         assertEquals(1, v.getVin());
         assertEquals(1993, v.getYear());
@@ -34,5 +35,6 @@ class VehicleTest {
     public void constructorTest_colorSetProperly_in1993allCarsAreSilver() {
         Vehicle v = new Vehicle(1, 1993, "Honda", "Accord", "sedan", "purple", 270000, 85.00);
         assertEquals("silver", v.getColor(), "Color not right");
+
     }
 }

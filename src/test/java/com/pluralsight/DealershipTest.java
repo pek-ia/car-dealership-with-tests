@@ -6,14 +6,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DealershipTest {
 
+    Dealership d = new Dealership("Paul", "222 Old Road", "607-272-4311");
+
+    @Test
+    public void dealership_Inventory_IsEmptyAfterConstructor(){
+        // Arrange
+        // Act
+        // Assert
+        assertEquals(0, d.getInventory().size());
+    }
+
     @Test
     void addVehicle_changesInventory() {
 
-        Dealership d = new Dealership("Paul", "222 Old Road", "607-272-4311");
+        // Arrange
         Vehicle v = new Vehicle(12345, 1992, "Honda", "Civic", "sedan", "black", 25090, 1500.);
+        int one_more_than_empty = 1;
 
-        assertEquals(0, d.getInventory().size());
+        // Act
         d.addVehicle(v);
-        assertEquals(1, d.getInventory().size());
+
+        // Assert
+        assertEquals(one_more_than_empty, d.getInventory().size());
     }
 }
